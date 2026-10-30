@@ -1,4 +1,4 @@
-# Sistema de cine con base de datos (e-actividad 2)
+# Sistema de cine con base de datos 
 
 Sistema para un cine hecho con Node.js, Express, SQLite y EJS. Permite hacer operaciones CRUD (crear, consultar, editar y eliminar) sobre cinco entidades: películas, salas, funciones, reservaciones y tickets. Los datos se guardan en una base de datos, así que no se pierden al apagar el servidor.
 
