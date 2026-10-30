@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+import http from 'http';
+import app from '../app.js';
+import db from '../database/conexion.js';
+
+const port = process.env.PORT || 3000;
+app.set('port', port);
+
+// Primero se abre la base de datos y después se levanta el servidor
+db.iniciar()
+  .then(() => {
+    http.createServer(app).listen(port, () => {
+      console.log(`Servidor listo en http://localhost:${port}`);
+    });
+  })
+  .catch((error) => {
+    console.error('No se pudo abrir la base de datos:', error.message);
+    process.exit(1);
+  });
