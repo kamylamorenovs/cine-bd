@@ -1,0 +1,23 @@
+<%- include('partials/cabecera', { titulo }) %>
+<% const editando = pelicula && pelicula.id; %>
+<h1><%= editando ? 'Editar película' : 'Nueva película' %></h1>
+<% if (error) { %><p class="aviso error"><%= error %></p><% } %>
+<form class="formulario" method="post" action="<%= editando ? '/vistas/peliculas/' + pelicula.id + '/editar' : '/vistas/peliculas' %>">
+  <label>Título
+    <input type="text" name="titulo" required value="<%= pelicula ? pelicula.titulo : '' %>">
+  </label>
+  <label>Género
+    <input type="text" name="genero" required value="<%= pelicula ? pelicula.genero : '' %>">
+  </label>
+  <label>Duración (minutos)
+    <input type="number" name="duracion" min="1" required value="<%= pelicula ? pelicula.duracion : '' %>">
+  </label>
+  <label>Fecha de estreno
+    <input type="date" name="fechaEstreno" required value="<%= pelicula ? pelicula.fechaEstreno : '' %>">
+  </label>
+  <div class="acciones">
+    <button class="boton" type="submit">Guardar</button>
+    <a class="boton secundario" href="/vistas/peliculas">Cancelar</a>
+  </div>
+</form>
+<%- include('partials/pie') %>

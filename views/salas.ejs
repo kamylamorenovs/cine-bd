@@ -1,0 +1,25 @@
+<%- include('partials/cabecera', { titulo }) %>
+<div class="encabezado">
+  <h1>Salas</h1>
+  <a class="boton" href="/vistas/salas/nueva">Nueva sala</a>
+</div>
+<% if (mensaje) { %><p class="aviso <%= tipo %>"><%= mensaje %></p><% } %>
+<% if (salas.length === 0) { %>
+  <p>No hay salas registradas. Agrega la primera con el botón Nueva sala.</p>
+<% } else { %>
+<table>
+  <tr><th>ID</th><th>Nombre</th><th>Capacidad</th><th>Tipo</th><th>Acciones</th></tr>
+  <% salas.forEach((s) => { %>
+  <tr>
+    <td><%= s.id %></td><td><%= s.nombre %></td><td><%= s.capacidad %></td><td><%= s.tipo %></td>
+    <td class="acciones">
+      <a class="boton secundario chico" href="/vistas/salas/<%= s.id %>/editar">Editar</a>
+      <form method="post" action="/vistas/salas/<%= s.id %>/eliminar" onsubmit="return confirm('¿Eliminar esta sala?');">
+        <button class="boton peligro chico" type="submit">Eliminar</button>
+      </form>
+    </td>
+  </tr>
+  <% }) %>
+</table>
+<% } %>
+<%- include('partials/pie') %>

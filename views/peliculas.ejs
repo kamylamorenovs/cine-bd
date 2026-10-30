@@ -1,0 +1,25 @@
+<%- include('partials/cabecera', { titulo }) %>
+<div class="encabezado">
+  <h1>Películas</h1>
+  <a class="boton" href="/vistas/peliculas/nueva">Nueva película</a>
+</div>
+<% if (mensaje) { %><p class="aviso <%= tipo %>"><%= mensaje %></p><% } %>
+<% if (peliculas.length === 0) { %>
+  <p>No hay películas registradas. Agrega la primera con el botón Nueva película.</p>
+<% } else { %>
+<table>
+  <tr><th>ID</th><th>Título</th><th>Género</th><th>Duración (min)</th><th>Estreno</th><th>Acciones</th></tr>
+  <% peliculas.forEach((p) => { %>
+  <tr>
+    <td><%= p.id %></td><td><%= p.titulo %></td><td><%= p.genero %></td><td><%= p.duracion %></td><td><%= p.fechaEstreno %></td>
+    <td class="acciones">
+      <a class="boton secundario chico" href="/vistas/peliculas/<%= p.id %>/editar">Editar</a>
+      <form method="post" action="/vistas/peliculas/<%= p.id %>/eliminar" onsubmit="return confirm('¿Eliminar esta película?');">
+        <button class="boton peligro chico" type="submit">Eliminar</button>
+      </form>
+    </td>
+  </tr>
+  <% }) %>
+</table>
+<% } %>
+<%- include('partials/pie') %>
