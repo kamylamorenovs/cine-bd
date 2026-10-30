@@ -78,9 +78,3 @@ Códigos de estado: 200 (correcto), 201 (creado), 400 (datos inválidos, relaci�
 - Reservación: `funcionId`, `cliente`, `cantidad`
 - Ticket: `reservacionId`, `asiento`, `precio`
 
-### Ejemplo
-`POST http://localhost:3000/peliculas/create` con este Body (JSON):
-```
-{ "titulo": "Shrek", "genero": "Animación", "duracion": 90, "fechaEstreno": "2001-05-18" }
-```
-La respuesta tiene el código 201 y la película aparece en `/vistas/peliculas`.
