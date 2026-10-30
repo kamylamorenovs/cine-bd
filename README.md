@@ -8,14 +8,14 @@ Sistema para un cine hecho con Node.js, Express, SQLite y EJS. Permite hacer ope
 - Visual Studio Code con la extensión Thunder Client (o Postman) para probar la API.
 
 ## Instalación
-```
+
 git clone https://github.com/kamylamorenovs/cine-bd
 cd cine-bd
 npm i
 ```
 
 ## Ejecución
-```
+
 npm start
 ```
 También se puede usar `npx nodemon ./bin/www`, que reinicia el servidor al guardar cambios (en ese caso aparece un aviso de "ExperimentalWarning" por el módulo SQLite; es normal).
@@ -27,7 +27,7 @@ Cuando aparece el mensaje `Servidor listo en http://localhost:3000`, abrir esa d
 - Para volver a los datos de ejemplo, detener el servidor, borrar el archivo `cine.db` y volver a iniciar.
 
 ## Estructura del proyecto
-```
+
 app.js               configuración de Express y conexión de rutas
 bin/www              arranque: abre la base de datos y levanta el servidor
 database/            conexion.js (clase BaseDatos) y esquema.js (tablas y datos de ejemplo)
