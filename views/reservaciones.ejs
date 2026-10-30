@@ -1,0 +1,13 @@
+<%- include('partials/cabecera', { titulo }) %>
+<h1>Reservaciones</h1>
+<% if (reservaciones.length === 0) { %>
+  <p>No hay reservaciones registradas. Se agregan con POST /reservaciones/create.</p>
+<% } else { %>
+<table>
+  <tr><th>ID</th><th>Cliente</th><th>Película</th><th>Fecha</th><th>Hora</th><th>Entradas</th><th>Tickets</th></tr>
+  <% reservaciones.forEach((r) => { %>
+  <tr><td><%= r.id %></td><td><%= r.cliente %></td><td><%= r.pelicula %></td><td><%= r.fecha %></td><td><%= r.hora %></td><td><%= r.cantidad %></td><td><%= r.tickets %></td></tr>
+  <% }) %>
+</table>
+<% } %>
+<%- include('partials/pie') %>
