@@ -9,8 +9,8 @@ Sistema para un cine hecho con Node.js, Express, SQLite y EJS. Permite hacer ope
 
 ## Instalación
 ```
-git clone URL_DEL_REPOSITORIO
-cd NOMBRE_DE_LA_CARPETA
+git clone https://github.com/kamylamorenovs/cine-bd
+cd cine-bd
 npm i
 ```
 
