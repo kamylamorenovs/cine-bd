@@ -1,0 +1,18 @@
+<%- include('partials/cabecera', { titulo }) %>
+<section class="hero">
+  <p class="sobre">Cartelera y reservas</p>
+  <h1>Vive el cine en pantalla grande</h1>
+  <p class="texto">Administra las películas y las salas, y consulta las funciones y reservaciones guardadas en la base de datos.</p>
+  <div class="acciones">
+    <a class="boton" href="/vistas/peliculas">Ver películas</a>
+    <a class="boton secundario" href="/vistas/salas">Ver salas</a>
+  </div>
+</section>
+<ul class="resumen">
+  <li><a href="/vistas/peliculas"><strong><%= totales.peliculas %></strong><span>películas</span></a></li>
+  <li><a href="/vistas/salas"><strong><%= totales.salas %></strong><span>salas</span></a></li>
+  <li><a href="/vistas/funciones"><strong><%= totales.funciones %></strong><span>funciones</span></a></li>
+  <li><a href="/vistas/reservaciones"><strong><%= totales.reservaciones %></strong><span>reservaciones</span></a></li>
+  <li><div><strong><%= totales.tickets %></strong><span>tickets</span></div></li>
+</ul>
+<%- include('partials/pie') %>
